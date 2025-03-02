@@ -97,6 +97,18 @@ Formulas are evaluated using a functional approach:
    npm run build
    ```
 
+## Demo 
+
+
+![Screenshot 2025-03-02 121721](https://github.com/user-attachments/assets/27e82b9a-0cd9-4bf9-a164-51d559286304)
+![Screenshot 2025-03-02 121629](https://github.com/user-attachments/assets/00a36146-9b13-4539-8e6f-e89b941cd31f)
+
+
+
+https://github.com/user-attachments/assets/632485f8-61da-4f6b-aa62-bec542d85347
+
+
+
 ## Project Structure
 
 ```
