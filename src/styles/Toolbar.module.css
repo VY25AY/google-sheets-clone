@@ -1,0 +1,164 @@
+.toolbar {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e0e0e0;
+  gap: 16px;
+  height: 48px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.formatGroup,
+.editGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 8px;
+  border-right: 1px solid #e0e0e0;
+}
+
+.editGroup {
+  border-right: none;
+}
+
+.toolbarButton {
+  height: 32px;
+  padding: 0 12px;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  background: white;
+  color: #3c4043;
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.toolbarButton:hover {
+  background-color: #f8f9fa;
+  box-shadow: 0 1px 2px rgba(60, 64, 67, 0.1);
+}
+
+.toolbarButton:active {
+  background-color: #f1f3f4;
+  border-color: #dadce0;
+}
+
+.toolbarButton[data-active="true"] {
+  background-color: #e8f0fe;
+  color: #1a73e8;
+  border-color: #1a73e8;
+}
+
+.toolbarSelect {
+  height: 32px;
+  padding: 0 8px;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  background: white;
+  color: #3c4043;
+  font-size: 13px;
+  cursor: pointer;
+  min-width: 64px;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M7%2010l5%205%205-5z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 4px center;
+  padding-right: 24px;
+}
+
+.toolbarSelect:hover {
+  background-color: #f8f9fa;
+  box-shadow: 0 1px 2px rgba(60, 64, 67, 0.1);
+}
+
+.toolbarSelect:focus {
+  outline: none;
+  border-color: #1a73e8;
+  box-shadow: 0 1px 2px rgba(26, 115, 232, 0.1);
+}
+
+.toolbarColor {
+  width: 32px;
+  height: 32px;
+  padding: 2px;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+}
+
+.toolbarColor::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.toolbarColor::-webkit-color-swatch {
+  border: none;
+  border-radius: 2px;
+}
+
+.toolbarColor:hover {
+  border-color: #1a73e8;
+}
+
+/* Separator */
+.separator {
+  width: 1px;
+  height: 24px;
+  background: #e0e0e0;
+  margin: 0 8px;
+}
+
+/* Button groups */
+.buttonGroup {
+  display: flex;
+  gap: 1px;
+}
+
+.buttonGroup .toolbarButton {
+  border-radius: 0;
+  border-right-width: 0;
+}
+
+.buttonGroup .toolbarButton:first-child {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.buttonGroup .toolbarButton:last-child {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-right-width: 1px;
+}
+
+/* Tooltip */
+.toolbarButton[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 1000;
+}
+
+/* Icons */
+.toolbarButton[data-icon]::before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  margin-right: 4px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}

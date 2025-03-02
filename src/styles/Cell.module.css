@@ -1,0 +1,151 @@
+.cell {
+  position: relative;
+  min-width: 120px;
+  height: 32px;
+  border-right: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  background: white;
+  font-size: 13px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  cursor: cell;
+  user-select: none;
+  overflow: hidden;
+}
+
+.cellContent {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cellInput {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 4px 8px;
+  border: 2px solid #1a73e8;
+  outline: none;
+  font-size: 13px;
+  font-family: inherit;
+  background: white;
+  z-index: 2;
+}
+
+.selected {
+  outline: 2px solid #1a73e8;
+  outline-offset: -2px;
+  z-index: 1;
+}
+
+/* Cell hover effect */
+.cell:hover:not(.selected) {
+  background-color: #f8f9fa;
+}
+
+/* Cell active state */
+.cell:active:not(.selected) {
+  background-color: #f1f3f4;
+}
+
+/* Formula cells */
+.cell[data-formula="true"] .cellContent {
+  color: #188038;
+}
+
+/* Number cells */
+.cell[data-type="number"] .cellContent {
+  text-align: right;
+}
+
+/* Error cells */
+.cell[data-error="true"] .cellContent {
+  color: #d93025;
+}
+
+/* Cell selection overlay */
+.selectionOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(26, 115, 232, 0.1);
+  border: 2px solid #1a73e8;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Cell drag handle */
+.dragHandle {
+  position: absolute;
+  right: -4px;
+  bottom: -4px;
+  width: 8px;
+  height: 8px;
+  background: #1a73e8;
+  border: 1px solid white;
+  cursor: crosshair;
+  z-index: 2;
+}
+
+/* Cell formatting */
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+/* Cell alignment */
+.alignLeft {
+  text-align: left;
+}
+
+.alignCenter {
+  text-align: center;
+}
+
+.alignRight {
+  text-align: right;
+}
+
+/* Cell borders */
+.borderTop {
+  border-top: 1px solid #000;
+}
+
+.borderRight {
+  border-right: 1px solid #000;
+}
+
+.borderBottom {
+  border-bottom: 1px solid #000;
+}
+
+.borderLeft {
+  border-left: 1px solid #000;
+}
+
+/* Cell background colors */
+.bgLight {
+  background-color: #f8f9fa;
+}
+
+.bgMedium {
+  background-color: #f1f3f4;
+}
+
+.bgDark {
+  background-color: #e8eaed;
+}
